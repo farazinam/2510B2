@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Operators</h1>
+
+    <script>
+        document.write("<h2> Arithmetic Operators </h2>");
+
+        var ar1 = 10;
+        var ar2 = 4;
+        // // console.log(ar1 + ar2)
+        // // alert(ar1 + ar2)
+        document.write(ar1 + ar2)  // 14
+        document.write(ar1 - ar2)  //6
+        document.write(ar1 * ar2)  //40
+        document.write(ar1 / ar2)  //2.5
+        document.write(ar1 % ar2)  //2
+
+    document.write("<h2> Assignment Operators </h2>");
+    var a = 12;
+    var b = 15;
+
+    document.write(a)
+    document.write(b)
+
+    // a += b  // a = a + b => 27
+    //a -= b  // a = a - b => -3
+    b *= a  // b = b * a => 180
+
+    document.write(a) //180
+    document.write(b) //15
+
+
+    document.write("<h2> Relational Operators </h2>");
+    var r1 = 10;
+    var r2 = "10";
+
+    // document.write( r1 == r2)  //true
+    // document.write( r1 === r2)  //false
+    // document.write( r1 > r2)  //false
+    // document.write( r1 >= r2)  //true
+    // document.write( r1 < r2)  //false
+    // document.write( r1 <= r2)  //true
+    // document.write( r1 != r2)  //false
+    // document.write( r1 !== r2)  //true
+
+    document.write("<h2> Logical Operators </h2>");
+
+    var age = 20;
+    var cnic = true;
+
+    // document.write(age >= 18 && cnic == true)
+    // document.write(age >= 18 || cnic == true)
+    document.write(!(age = 20))
+
+    if(age >= 18 && cnic == true){
+        document.write("You are Eligible for Vote!")
+    }
+    else{
+        document.write("You are NOT Eligible for Vote!")
+    }
+
+    document.write("<h2> Special/Conditional Operators </h2>");
+
+    var name = true;
+    var result = name ? "Welcome Faraz" : "Please Log In";
+    document.write(result);
+
+    
+
+        </script>
+
+</body>
+</html>
