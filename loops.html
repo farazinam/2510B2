@@ -87,12 +87,58 @@
         //     console.log(i + " Even Numbers");
         // }
 
-        for(let i = 1; i <= 20; i++){
-            console.log(i);
-            if(i == 7){
-                break;
-            }
+        // for(let i = 1; i <= 20; i++){
+        //     console.log(i);
+        //     if(i == 7){
+        //         break;
+        //     }
+        // }
+        // console.log("Outside the Loops...");
+
+        // for(let i = 1; i <= 20; i++){
+        //     console.log(i);
+        //     if(i == 7){
+        //         exit();
+        //     }
+        // }
+        // console.log("Outside the Loops...");
+
+        // //Table
+        // var table = prompt("Enter a Number", "e.g; 4");
+        // for(let i = 1; i <= 10; i++){
+        //     document.write(table + " X " + i + " = " + table*i + "<br>")
+        // }
+
+
+        // Creation of Grade Calculator Using if/else
+
+        var per = prompt("Enter a Percentage");
+
+        if(per <= 100 && per >= 80){
+            document.write("Your Grade is A+")
         }
+        else if(per <= 79 && per >= 70){
+            document.write("Your Grade is A")
+        }
+        else if(per <= 69 && per >= 60){
+            document.write("Your Grade is B")
+        }
+        else if(per <= 59 && per >= 50){
+            document.write("Your Grade is C")
+        }
+        else if(per <= 49 && per >= 40){
+            document.write("Your Grade is D")
+        }
+        else if(per <= 39 && per >= 33){
+            document.write("Your Grade is E")
+        }
+        else if(per <= 32 && per >= 0){
+            document.write("Your Grade is FAIL")
+        }
+        else{
+            document.write("Please provide valid percentage")
+        }
+        
 
         
     </script>
