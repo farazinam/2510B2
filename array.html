@@ -8,7 +8,8 @@
 <body>
     <h1>Array</h1>
     <script>
-        // var lab23 = ["Ali", "Ahmed", "Usman", "Danish"];
+        //method 1
+         var lab23 = ["Ali", "Ahmed", "Usman", "Danish"];
 
         // document.write(lab23);
         // document.write("<br>");
@@ -32,14 +33,45 @@
         fruits.push("orange")
         console.log(fruits)
 
-        fruits.pop()
-        console.log(fruits)
+        // fruits.pop()
+        // console.log(fruits)
 
         fruits.unshift("Kiwi")
         console.log(fruits)
 
-        fruits.shift()
-        console.log(fruits)
+        // fruits.shift()
+        // console.log(fruits)
+
+        var vegetables = ["potato", "tomato", "onion", "brigal", "lady finger", "radish", "abc"]
+
+       console.log(vegetables.slice(2, 4));
+
+       console.log(vegetables.splice(2, 0, "beetroot"));
+
+       console.log(vegetables);
+       
+
+        console.log(vegetables[0]);
+        console.log(vegetables[1]);
+        console.log(vegetables[2]);
+        console.log(vegetables[3]);
+        console.log(vegetables[4]);
+
+        for(var i = 0; i < vegetables.length; i++){
+            console.log(vegetables[i]);    
+        }
+
+        var stdDetails1 = [1, 2, 4, 7, 6, 10]
+        var stdDetails2 = ["Ali", 22, "Karachi", true]
+
+
+        //method 2 (constructor method)
+        var employee = new Array();
+        employee[0] = "Daniyal";
+        employee[1] = "Bilal";
+        employee[2] = "Haris";
+
+        
     </script>
 </body>
 </html>
