@@ -10,12 +10,17 @@
 
     <script>
         //method 1 (direct method)
-        // var student = {
-        //     name: "Ali",
-        //     age: 22,
-        //     city: "karachi",
-        //     cnic: false
-        // }
+        var student = {
+            name: "Ali",
+            age: 22,
+            city: "karachi",
+            cnic: false
+        }
+
+        for(var key in  student){
+            console.log(key + ": " + student[key]);
+            // console.log(student[key]); 
+        }
 
         // console.log(student.name);
         // console.log(student["name"]);
@@ -39,19 +44,121 @@
 
         // Built-in Objects
 
-        var center1 = "Aptech";
-        var center2 = " Learning";
+        // var center1 = "Aptech";
+        // var center2 = " Learning";
 
         //String Objects
-        console.log(center1.charAt(2));
-        console.log(center1.indexOf("c"));
-        console.log(center1.concat(center2));
-        var sp = center1.split("");
-        var rev = sp.reverse();
-        var j = sp.join("");
-        console.log(j);
+        // console.log(center1.charAt(2));
+        // console.log(center1.indexOf("c"));
+        // console.log(center1.concat(center2));
+        // var sp = center1.split("");
+        // var rev = sp.reverse();
+        // var j = sp.join("");
+        // console.log(j);
 
 
+        // var word = prompt("Enter a Word");
+        // var sp = word.split("");
+        // var rv = sp.reverse();
+        // var j = rv.join("");
+
+        // var j = word.split("").reverse().join("");
+
+        // if(j == word){
+        //     alert("Palendrome Word")
+        // }
+        // else{
+        //     alert("Not a Palendrome Word")
+        // }
+
+        //Math Objects
+        // var age = 22.6;
+        // console.log(age);
+        
+        // var round = Math.round(age)
+        // console.log(round);
+        
+        // var num1 = 12.7;
+        // var floor = Math.floor(num1)
+        // console.log(floor);
+
+        // var num2 = 12.2;
+        // var ceil = Math.ceil(num1)
+        // console.log(ceil);
+
+        // var name1 = prompt("Enter Your Name");
+        // var name2 = prompt("Enter Your Friend Name");
+
+        // var randomNum = Math.random();
+        // console.log(randomNum);
+        
+        // var roundNum = Math.round(randomNum);
+        // console.log(roundNum);
+        
+        // if(roundNum == 0){
+        //     alert(name1 + " is Winner"); 
+        // }
+        // else{
+        //     alert(name2 + " is Winner");
+            
+        // }
+
+
+        //Date Objects
+        // var d1 = new Date();
+        // console.log(d1);
+
+        // var d2 = new Date();
+        // var getD = d2.getDate()
+        // console.log(getD);
+
+        // var getDy = d2.getDay();
+        // console.log(getDy);
+
+        // if(getDy == 0){
+        //     console.log("Today's is Sunday - HOLIDAY"); 
+        // }
+        // else if(getDy == 1){
+        //     console.log("Today's is Monday - HOLIDAY");
+        // }
+        // else if(getDy == 2){
+        //     console.log("Today's is Tuesday");
+        // }
+        // else if(getDy == 3){
+        //     console.log("Today's is Wednesday - HOLIDAY");
+        // }
+        // else if(getDy == 4){
+        //     console.log("Today's is Thusday");
+        // }
+        // else if(getDy == 5){
+        //     console.log("Today's is Friday - HOLIDAY");
+        // }
+        // else if(getDy == 6){
+        //     console.log("Today's is Saturday");
+        // }
+
+        // var year = d2.getFullYear();
+        // var hr = d2.getHours();
+        // var ms = d2.getMilliseconds();
+        // var sec = d2.getSeconds();
+        // var t = d2.getTime();
+        // var m = d2.getMonth();
+
+        // console.log(year);
+        // console.log(hr);
+        // console.log(ms);
+        // console.log(sec);
+        // console.log(t);
+        // console.log(m);
+        
+        // var d = new Date();
+        // var dob = new Date(prompt("Enetr you DOB","jan/12/2000"));
+
+        // var yearOfDate = d.getFullYear();
+        // var yearOfDOB = dob.getFullYear();
+
+        // var age = yearOfDate - yearOfDOB;
+        // alert("Your Age is " + age)
         
         
     </script>
