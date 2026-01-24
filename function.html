@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Function</h1>
+
+    <script>
+        //Built-in Functions
+        // alert("Welcome")
+        // confirm("are you sure?")
+
+        // Custom/User-defined functions
+        // non-parametarized function
+        // function greed1(){
+        //     alert("My Name is Faraz")
+        // }
+
+        //greed1(); // call/invoke function
+
+        // function greed2(){
+        //     document.write("My Name is Faraz <br>"); 
+        //     document.write("We are learning Function <br>"); 
+        //     document.write("Aptech learning <br>"); 
+        //     document.write(2 + 7);  
+        // }
+
+        // greed2();
+        // greed2();
+        // greed2(); 
+
+    // parametarized function
+
+    // function Add(a, b){
+    //     alert(a + b)
+    // }
+
+    // Add(3, 8);
+    // Add(10, 8);
+
+    // function Calculator(){
+    //     var num1 = parseInt(prompt("Enter 1st number"));
+    //     var num2 = parseInt(prompt("Enter 2nd number"));
+    //     var opr = prompt("Enter Operator", "+, -, *, /")
+
+    //     if(opr == "+"){
+    //         alert("The Addition of " + num1 + " and " + num2 + " is " + (num1 + num2));
+    //     }
+    //     else if(opr == "-"){
+    //         alert(num1 - num2);
+    //     }
+    //     else if(opr == "*"){
+    //         alert(num1 * num2);
+    //     }
+    //     else if(opr == "/"){
+    //         alert(num1 / num2);
+    //     }
+    //     else{
+    //         alert("Please provide correct Operator or the Operand")
+    //     }
+    // }
+
+    // Calculator();
+
+
+    //default parameter
+    function Addition(num1 = 5, num2 = 4){
+        alert(num1 + num2)
+    }
+
+    // Addition()
+    // Addition(2)
+    Addition(2, 5)
+
+
+    // return function
+    function Welcome(w, fn, ln){
+        return w + fn + ln
+    }
+
+    // alert(Welcome("Welcome " ,"Faraz", " Inam"));
+
+
+    </script>
+</body>
+</html>
