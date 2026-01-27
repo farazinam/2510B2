@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> -------- EVENT HANDLING ----------------</h1>
+
+            <h3>Mouse EVENT</h3>
+
+    <button onclick='alert("Hello")'>Click Me</button>
+
+    <button onclick="invoke()">Click to Call Function</button>
+
+    <button 
+    ondblclick="console.log('This is Double Click Event')">
+    Double Click</button>
+    <button 
+    onmouseover="console.log('This is Mouse Over Event')" 
+    onmouseout="console.log('This is Mouse Out Event')">
+    Mouse Over
+</button>
+
+<button 
+onmousedown="console.log('This is Mouse Down Event')"
+onmouseup="console.log('This is Mouse Up Event')"
+> Down/Up </button>
+
+                <h3>KeyBoard EVENT</h3>
+
+<button onkeypress="alert('Key Pressed!')">KeyPress</button>
+<button 
+
+onkeydown="console.log('Key Down!')"
+onkeyup="console.log('Key Up')"
+oncontextmenu="console.log('right clicked!');
+"
+>Key Down and Up</button>
+
+
+
+                <h3>Form EVENT</h3>
+
+
+    <form onsubmit="formhandling()">
+        <label for="">Name</label>
+        <input type="text" 
+        onfocus="console.log('Focused')"
+        onblur="console.log('Blur')"
+        onselect="console.log('selected');
+        "
+        > <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function formhandling(){
+            alert('Form Submitted Successfully')
+        }
+
+        
+        function invoke(){
+            alert("Hello World");
+            document.write("Hello");
+            console.log("Hello");  
+        }
+
+
+        
+    </script>
+
+    
+</body>
+</html>
