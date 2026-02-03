@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM (Document Object Model)</h1>
+
+    <!-- 1  -->
+    <h4 id="myname"></h4>
+
+    <!-- 2  -->
+    <button onclick="abc()">Click</button>
+    <p id="msg"></p>
+
+    <!-- 3  -->
+    <input type="text" id="inp"> 
+    <button onclick="getdata()">Get Data</button>
+    <h4 id="inpmsg"></h4>
+    <hr>
+
+    <!-- 4 -->
+    <p class="para">This is a Paragraph</p>
+
+    <!-- 5 -->
+     <a href="https://www.facebook.com/">facebook</a>
+     <button onclick="change()"> Change URL</button>
+
+     <!-- 6 -->
+      <button onclick="changeTheme()">Change Theme</button>
+
+    <script>
+        // 1
+        document.getElementById("myname").innerHTML = "Welcome";
+
+        // 2
+        function abc(){
+            document.getElementById("msg").innerHTML = "Welcome";
+        }
+
+        // 3
+        function getdata(){
+            var data = document.getElementById("inp").value;
+            document.getElementById("inpmsg").innerHTML = data;
+        }
+
+        // 4
+        let res = "We are Learning DOM"
+        document.getElementsByClassName("para")[0].innerHTML = res;
+
+        // 5
+        function change(){
+            // document.getElementsByTagName("a")[0].innerHTML = "Instagram"
+            // document.getElementsByTagName("a")[0].href = "https://www.instagram.com/";
+
+            var tag = document.getElementsByTagName("a")[0];
+            tag.innerHTML = "Imstagram";
+            tag.href = "https://www.instagram.com/";
+        }
+
+        // 6 
+        function changeTheme(){
+            document.getElementsByTagName("body")[0].style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+</html>
