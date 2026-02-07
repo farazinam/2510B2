@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Form Validation Using Regular Expression</h1>
+    
+    <form onsubmit="validate()">
+        <label for="">Enter Your Name</label>
+        <input type="text" id="name"> <br>
+        <p id="error" style="color: red;"></p>
+        <button type="submit"> Submit </button>
+    </form>
+
+    <script>
+        function validate(){
+            event.preventDefault();
+
+           var n = document.getElementById("name").value;  //input
+           var e = document.getElementById("error"); //p
+
+           var patt = /^[a-z]{3,10}$/
+
+           if(n == ""){
+            e.innerHTML = "Name is Required";
+            // document.getElementById("error").innerHTML = "Name is Required";
+            
+           }
+           else if(!patt.test(n)){
+            // document.getElementById("error").innerHTML = "please provide valid name that contains characters only"
+            e.innerHTML = "please provide valid name that contains characters only"
+           }
+           else{
+            alert("Form Submitted Successfully!")
+            // document.getElementById("error").innerHTML = ""
+            e.innerHTML = ""
+           }
+           
+        }
+    </script>
+</body>
+</html>
