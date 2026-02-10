@@ -62,7 +62,13 @@
 
         // 6 
         function changeTheme(){
-            document.getElementsByTagName("body")[0].style.backgroundColor = "yellow";
+            var b = document.getElementsByTagName("body")[0];
+            if(b.style.backgroundColor == "white" || b.style.backgroundColor == ""){
+                b.style.backgroundColor = "yellow";
+            }
+            else{
+                b.style.backgroundColor = "white";
+            }
         }
     </script>
 </body>

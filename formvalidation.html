@@ -10,8 +10,18 @@
     
     <form onsubmit="validate()">
         <label for="">Enter Your Name</label>
-        <input type="text" id="name"> <br>
-        <p id="error" style="color: red;"></p>
+        <input type="text" id="name">
+        <p id="nameError" style="color: red;"></p>
+
+        <label for="">Contact #</label>
+        <input type="text" id="contact">
+        <p id="contactError" style="color: red;"></p>
+        
+        <label for="">Email</label>
+        <input type="text" id="email">
+        <p id="emailError" style="color: red;"></p>
+
+
         <button type="submit"> Submit </button>
     </form>
 
@@ -20,23 +30,37 @@
             event.preventDefault();
 
            var n = document.getElementById("name").value;  //input
-           var e = document.getElementById("error"); //p
+           var ne = document.getElementById("nameError"); //p
 
-           var patt = /^[a-z]{3,10}$/
+           var c = document.getElementById("contact").value;  //input
+           var ce = document.getElementById("contactError"); //p
+
+           var namePatt = /^[a-z]{3,10}$/
+           var contactPatt = /^\d{11}$/
 
            if(n == ""){
-            e.innerHTML = "Name is Required";
+            ne.innerHTML = "Name is Required";
             // document.getElementById("error").innerHTML = "Name is Required";
             
            }
-           else if(!patt.test(n)){
+           else if(!namePatt.test(n)){
             // document.getElementById("error").innerHTML = "please provide valid name that contains characters only"
-            e.innerHTML = "please provide valid name that contains characters only"
+            ne.innerHTML = "please provide valid name that contains characters only"
            }
+
+           else if(c == ""){
+            ce.innerHTML = "Contact Required"
+           }
+
+           else if(!contactPatt.test(c)){
+            ce.innerHTML = "Must provide digits that contains 11 digits"
+           }
+
            else{
             alert("Form Submitted Successfully!")
             // document.getElementById("error").innerHTML = ""
-            e.innerHTML = ""
+            ne.innerHTML = ""
+            ce.innerHTML = ""
            }
            
         }
