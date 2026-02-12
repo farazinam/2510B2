@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // var can be redeclare and reassign
+        var v = 22;
+        console.log(v); //22
+
+        var v = 26;
+        console.log(v); //26
+
+
+        // let cannot be redeclare but reassign
+        let l = 34;
+        console.log(l);
+
+        //let l = 38; cannot be redeclare
+        l = 38;
+        console.log(l); // but reassign
+
+
+        // const neither be redeclare nor reassign
+        const c = 45;
+        console.log(c);
+
+        //const c = 49; neither be redeclare
+        //c = 49; //nor reassign
+        console.log(c);
+
+        // -------------------------------------------------------------------
+        
+        var name = "Ali";
+        var productName = "Glasses";
+        var brand = "Rayban";
+        var price = 1400;
+
+        console.log("My name is " + name + " , I have " + productName + " ,brand is " + brand + " and price is " + price);
+        
+
+        // Template Literal
+        console.log(`My name is ${name}, I have ${productName}, brand is ${brand}, and price is ${price}`);
+        
+        // --------------------------------------------------------------------
+        
+        function abc(){
+            console.log("Hello Simple Function");
+            
+        }
+        
+        abc()
+
+        const xyz = () => {
+            console.log("Hello Arrow Function");     
+        }
+
+        xyz()
+        
+
+        
+        
+    </script>
+</body>
+</html>

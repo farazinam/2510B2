@@ -21,7 +21,6 @@
         <input type="text" id="email">
         <p id="emailError" style="color: red;"></p>
 
-
         <button type="submit"> Submit </button>
     </form>
 
@@ -35,8 +34,12 @@
            var c = document.getElementById("contact").value;  //input
            var ce = document.getElementById("contactError"); //p
 
+           var e = document.getElementById("email").value;  //input
+           var ee = document.getElementById("emailError"); //p
+
            var namePatt = /^[a-z]{3,10}$/
            var contactPatt = /^\d{11}$/
+           const emailPatt = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
            if(n == ""){
             ne.innerHTML = "Name is Required";
@@ -50,10 +53,22 @@
 
            else if(c == ""){
             ce.innerHTML = "Contact Required"
+            ne.innerHTML = "";
            }
 
            else if(!contactPatt.test(c)){
             ce.innerHTML = "Must provide digits that contains 11 digits"
+            ne.innerHTML = "";
+           }
+
+           else if(e == ""){
+            ee.innerHTML = "Email Required"
+            ce.innerHTML = "";
+           }
+
+           else if(!emailPatt.test(e)){
+            ee.innerHTML = "Invalid Email"
+            ce.innerHTML = "";
            }
 
            else{
@@ -61,6 +76,7 @@
             // document.getElementById("error").innerHTML = ""
             ne.innerHTML = ""
             ce.innerHTML = ""
+            ee.innerHTML = ""
            }
            
         }
