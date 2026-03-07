@@ -8,6 +8,90 @@
 </head>
 <body>
     <h1> Modal </h1>
+    <button data-bs-target="#m" data-bs-toggle="modal">Show Modal</button>
+    <div id="m" class="modal modal-xl fade" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h2 class="text-warning">Warning!</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, nam.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success"> Save </button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal"> Close </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1> Offcanvas </h1>
+    <button data-bs-target="#abc" data-bs-toggle="offcanvas">Show Offcanvas</button>
+    <div id="abc" class="offcanvas">
+        <div class="offcanvas-header">
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <h1>This is offcanvass</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, doloribus.</p>
+        </div>
+        <div class="offcanvas-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="offcanvas">Close</button>
+        </div>
+    </div>
+
+    <h1>Scrollspy</h1>
+
+    <nav id="abc" class="fixed-top bg-warning" >
+        <a href="#section1">HOME</a>
+        <a href="#section2">ABOUT</a>
+        <a href="#section3">SERVICES</a>
+        <a href="#section4">CONTACT</a>
+    </nav>
+
+    <div data-bs-spy="scroll" data-bs-target="#abc">
+        <h1 id="section1">HOME</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <h1 id="section2">ABOUT</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <h1 id="section3">SERVICES</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <h1 id="section4">CONTACT</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
 
     <script src="bootstrap/js/bootstrap.js"></script>
 </body>
