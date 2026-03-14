@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+</head>
+<body>
+    
+    <h2>Welcome to JQuery 1</h2>
+    <h2 id="two">Welcome to JQuery 2</h2>
+    <h2 class="three">Welcome to JQuery 3</h2>
+
+    <script>
+
+        var val1 = document.getElementsByTagName("h2")[0].innerHTML;
+        var val11 = document.getElementById("two").innerHTML;
+        var val111 = document.getElementsByClassName("three")[0].innerHTML;
+        console.log(val1);
+        console.log(val11);
+        console.log(val111);
+        
+
+        $(document).ready(function (){
+            var val2 = $("h2").html();
+            var val22 = $("#two").html();
+            var val222 = $(".three").html();
+            console.log(val2);
+            console.log(val22);
+            console.log(val222);
+        })
+
+    </script>
+
+
+</body>
+</html>
