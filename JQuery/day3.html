@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+</head>
+<body>
+    <h2>Styling Using jQuery</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, molestiae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, molestiae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, molestiae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, molestiae.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, molestiae.</p>
+
+    <script>
+        $(function (){
+            // document.getElementsByTagName("p")[0].style.color = 'blue';
+            // $("p").css('color' , 'green');
+            $("p:eq(2)").css('color' , 'brown');
+            $("p:first").css('color' , 'green');
+            $("p:last").css('color' , 'green');
+            $("p:even").css('color' , 'green');
+            $("p:odd, h2").css('color' , 'blue');
+            $("p:gt(2)").css('color' , 'yellow');
+        })
+    </script>
+</body>
+</html>

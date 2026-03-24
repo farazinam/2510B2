@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <button>Click to Implement Styling</button>
+
+    <form>
+        <input type="text">
+       <button type="submit"></button>
+    </form>
+
+
+    <script>
+        $(function (){
+            //Mouse event
+            $('button').mouseenter(function (){
+                // $('p').css('color', 'lightblue');
+                // $('p').css('background-color', 'gray');
+                // $('p').css('font-family', 'cooper');
+
+                $('p').css({'color' : 'blue', 'background-color' : 'lightblue'});
+            })
+            $('button').mouseleave(function (){
+                $('p').css('font-family', 'cooper');
+            })
+
+            $('button').contextmenu(function (){
+                event.preventDefault();
+                $('p').css('width', '50%');
+            })
+
+            //Keyboard events (do it yourself)
+
+            //Form Events
+            $('form').submit(function (){
+                
+            })
+        })
+    </script>
+</body>
+</html>
