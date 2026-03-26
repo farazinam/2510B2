@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Garden</title>
     <script src="jquery-4.0.0.min.js"></script>
+    <link rel="shortcut icon" href="" type="image/x-icon">
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet.</p>
+    <p id="para1">Lorem ipsum dolor sit amet.</p>
 
     <button>Click to Implement Styling</button>
 
     <form>
         <input type="text">
-       <button type="submit"></button>
+        <p id="para2"></p>
+       <button type="submit">submit</button>
     </form>
 
 
@@ -25,22 +27,44 @@
                 // $('p').css('background-color', 'gray');
                 // $('p').css('font-family', 'cooper');
 
-                $('p').css({'color' : 'blue', 'background-color' : 'lightblue'});
+                $('#para1').css({'color' : 'blue', 'background-color' : 'lightblue'});
             })
             $('button').mouseleave(function (){
-                $('p').css('font-family', 'cooper');
+                $('#para1').css('font-family', 'cooper');
             })
 
             $('button').contextmenu(function (){
                 event.preventDefault();
-                $('p').css('width', '50%');
+                $('#para1').css('width', '50%');
+            })
+
+            $('button').click(function (){
+                $(this).css('color', 'green');
+                $(this).css('background-color', 'lightgreen');
+                $(this).css('border', 'none');
             })
 
             //Keyboard events (do it yourself)
 
             //Form Events
             $('form').submit(function (){
-                
+                event.preventDefault();
+
+                var inpdata = $("input").val();
+                $("#para2").html(inpdata);
+            })
+
+            $('input').focus(function (){
+                // $('input').css('background-color', 'lightgreen');
+                $(this).val("Enter Your Name");
+            })
+
+            $('input').blur(function (){
+                $(this).css('background-color', 'yellow');
+            })
+
+            $('input').select(function (){
+                $(this).css('border-radius', '40%');
             })
         })
     </script>
