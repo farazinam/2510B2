@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+</head>
+<body>
+    <!-- GET and SET METHOD  -->
+    <p id="para1">Lorem ipsum <b>dolor</b> sit amet.</p>
+    <input type="text">
+
+    <a href="https://www.facebook.com/">Facebook</a>
+
+    <button id="htmlbtn">Get HTML</button>
+    <button id="textbtn">Get Text</button>
+    <button id="attrbtn">Get Attribute</button>
+    <button id="valbtn">Get Value</button>
+
+    <div></div>
+
+    <script>
+        $(function (){
+
+            $("#htmlbtn").click(function (){
+              var gethtml = $("#para1").html(); //get method by html 
+              console.log(gethtml);
+              alert(gethtml);
+
+              $("div").html(gethtml);           
+            })
+
+            $("#textbtn").click(function (){
+              var gettext = $("#para1").text(); //get method by text
+              console.log(gettext);
+              alert(gettext);
+
+              $("div").eq(0).text(gettext);            
+            })
+
+            $("#valbtn").click(function (){
+               var getval = $("input").eq(0).val(); //get method by value
+               console.log(getval);
+               $("div").eq(0).text(getval);
+            })
+
+            $("#attrbtn").click(function (){
+               var getattr = $("a").eq(0).attr("href");
+               console.log(getattr);
+               alert(getattr);
+               
+            })
+        })
+    </script>
+</body>
+</html>
