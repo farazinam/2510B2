@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+
+    <style>
+        p {
+            background-color: lightblue;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #container1 {
+            background-color: red;
+        }
+
+        #container2 {
+            background-color: green;
+        }
+
+        #container3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="para1">Lorem ipsum dolor sit, <br>
+        amet consectetur adipisicing elit. <br>
+        Itaque, accusamus?</p>
+
+    <button id="hidebtn">Hide</button>
+    <button id="showbtn">Show</button>
+    <button id="togglebtn">Toggle</button>
+
+    <hr>
+
+    <!-- ------------------------------------------------------- -->
+
+    <button id="fadeoutbtn">Fade Out</button>
+    <button id="fadeinbtn">Fade In</button>
+    <button id="fadetobtn">Fade To</button>
+    <button id="fadetogglebtn">Fade Toggle</button>
+
+    <div id="container1"></div>
+    <div id="container2"></div>
+    <div id="container3"></div>
+
+
+
+    <!-- ------------------------------------------------------- -->
+
+    <script>
+        $(function () {
+
+            // SHOW, HIDE, TOGGLE 
+            $('#hidebtn').click(function () {
+                $("#para1").hide(2000, function(){
+                    alert("Hide Hogya");
+                });
+            })
+            $('#showbtn').click(function () {
+                $("#para1").show('fast', function(){
+                    alert("Mubarak ho Show Hogya");
+                });
+            })
+            $('#togglebtn').click(function () {
+                $("#para1").toggle(1000);
+            })
+
+            // ------------------------------------------------
+
+            //FADE IN, FADE OUT, FADE TOGGLE, FADE TO
+            $('#fadeoutbtn').click(function () {
+                $("#container1").fadeOut(500);
+                $("#container2").fadeOut(1000);
+                $("#container3").fadeOut(1500);
+            })
+            $('#fadeinbtn').click(function () {
+                $("#container1").fadeIn(500);
+                $("#container2").fadeIn(1000);
+                $("#container3").fadeIn(1500);
+            })
+            $('#fadetobtn').click(function(){
+                $("#container1").fadeTo(500, 0.3);
+                $("#container2").fadeTo(1000, 0.5);
+                $("#container3").fadeTo(1500, 0.7);
+            })
+            $('#fadetogglebtn').click(function(){
+                $("#container1").fadeToggle(500);
+                $("#container2").fadeToggle(1000);
+                $("#container3").fadeToggle(1500);
+            })
+        })
+    </script>
+</body>
+
+</html>
