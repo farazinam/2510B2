@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+    <script src="isotope.pkgd.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="product-menu">
+        <ul class="list-inline">
+            <li class="list-inline-item btn btn-warning" data-filter="*">All</li>
+            <li class="list-inline-item" data-filter=".bag">Bag</li>
+            <li class="list-inline-item" data-filter=".pen">Pen</li>
+            <li class="list-inline-item" data-filter=".ink">Ink</li>
+            <li class="list-inline-item" data-filter=".cal">Calculator</li>
+        </ul>
+    </div>
+    
+    <div class="product-item">
+        <img class="ink item" width="25%" src="Images/Ink1.png" alt="">
+        <img class="bag item" width="25%" src="Images/bag1.png" alt="">
+        <img class="ink item" width="25%" src="Images/Ink2.png" alt="">
+        <img class="pen item" width="25%" src="Images/pen1.png" alt="">
+        <img class="bag item" width="25%" src="Images/bag3.png" alt="">
+        <img class="pen item" width="25%" src="Images/pen2.png" alt="">
+        <img class="pen item" width="25%" src="Images/pen4.png" alt="">
+        <img class="cal item" width="25%" src="Images/cal3.png" alt="">
+        <img class="ink item" width="25%" src="Images/Ink3.png" alt="">
+        <img class="bag item" width="25%" src="Images/bag4.png" alt="">
+        <img class="ink item" width="25%" src="Images/Ink4.png" alt="">
+        <img class="cal item" width="25%" src="Images/cal2.png" alt="">
+        <img class="bag item" width="25%" src="Images/bag2.png" alt="">
+        <img class="cal item" width="25%" src="Images/cal1.png" alt="">
+        <img class="pen item" width="25%" src="Images/pen3.png" alt="">
+    </div>
+
+
+
+    <script>
+        $('.product-item').isotope({
+            // options
+            itemSelector: '.item',
+            layoutMode: 'fitRows'
+        });
+        $('.product-menu ul li').click(function () {
+            $('.product-menu ul li').removeClass('btn btn-warning');
+            $(this).addClass('btn btn-warning');
+            var selector = $(this).attr('data-filter');
+            $(".product-item").isotope({
+                filter: selector
+            });
+            return false
+        });
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
