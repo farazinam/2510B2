@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+</head>
+<body>
+    <h1 class="text-center text-primary">SignUp Form</h1>
+
+    <form class="w-50 mx-auto p-5 rounded" style="border: 2px groove gray;">
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" required class="form-control" id="username" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" required class="form-control" id="email" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" required class="form-control" id="password">
+  </div>
+  <button id="signup" type="submit" class="btn btn-primary me-3">Sign Up</button>
+  Already have an Account? <a href="signin.html">SignIn Now</a>
+</form>
+
+<script>
+    $(function(){
+        $("#signup").click(function(){
+            var un = $('#username').val();
+            var em = $('#email').val();
+            var ps = $('#password').val();
+
+            localStorage.setItem("USERNAME", un);
+            localStorage.setItem("EMAIL", em);
+            localStorage.setItem("PASSWORD", ps);
+
+        })
+    })
+    // localStorage.removeItem("USERNAME");
+    // localStorage.removeItem("EMAIL");
+    // localStorage.removeItem("PASSWORD");
+</script>
+
+
+</body>
+</html>
