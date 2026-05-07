@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Students Data -->
+
+<students>
+    <s:std xmlns:s="https://www.facebook.com/">
+        <s:sid_id>101</s:sid_id>
+        <s:name eligible="yes">Ali</s:name>
+        <s:contact>0300-0987654</s:contact>
+    </s:std>
+    <std>
+        <s:sid_id>102</s:sid_id>
+        <s:name>Ahmed</s:name>
+        <s:contact>0300-0987654</s:contact>
+    </std>
+    <t:teacher xmlns:t="http:www.farazinam.com">
+        <t:t_id>1001</t:t_id>
+        <t:name>Faraz</t:name>
+        <t:city>Karachi</t:city>
+    </t:teacher>
+</students>
