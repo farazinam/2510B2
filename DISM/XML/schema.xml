@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xs:schema>
+
+<xs:element name="name" type="xs:string" />
+<xs:element name="age" type="xs:integer" />
+<xs:element name="bithDate" type="xs:date" />
+<xs:element name="color" type="xs:string" fixed="red" />
+<xs:attribute name="lang" type="xs:string" use="required" />
+
+</xs:schema>
+
+<!-- <root>
+<name>Ali</name>
+<age>22</age>
+<birthDate>1 jan 2000</birthDate>
+<color lang="EN">red</color>
+</root> -->

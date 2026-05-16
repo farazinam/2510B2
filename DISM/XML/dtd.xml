@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="styles.xsl"?>
+
+<!DOCTYPE institute [
+<!ELEMENT institute (course*, duration? , branch+, location)>
+<!ELEMENT course (#PCDATA)>
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT branch (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ATTLIST course id (CDATA) #REQUIRED>
+<!ENTITY ALP "Aptech Learning Pakitan" >
+]
+>
+<root>
+<institute>
+    <course id="123">Software Engineering</course>
+    <duration>3 Years</duration>
+    <branch>North Nazimabad</branch>
+    <location>&ALP;</location>
+</institute>
+<institute>
+    <course id="123">Software Engineering</course>
+    <duration>3 Years</duration>
+    <branch>North Nazimabad</branch>
+    <location>&ALP;</location>
+</institute>
+</root>

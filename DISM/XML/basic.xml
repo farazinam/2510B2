@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css" ?>
 
 <!-- Students Data -->
 
@@ -8,11 +9,11 @@
         <s:name eligible="yes">Ali</s:name>
         <s:contact>0300-0987654</s:contact>
     </s:std>
-    <std>
+    <s:std xmlns:s="https://www.facebook.com/">
         <s:sid_id>102</s:sid_id>
         <s:name>Ahmed</s:name>
         <s:contact>0300-0987654</s:contact>
-    </std>
+    </s:std>
     <t:teacher xmlns:t="http:www.farazinam.com">
         <t:t_id>1001</t:t_id>
         <t:name>Faraz</t:name>
