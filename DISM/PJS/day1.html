@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Programing With Javascript (PJS)</h1>
+
+
+    <script>
+        document.write("<h2> Data Types </h2>");
+
+        document.write("<h3> Primitive Data Types </h3>");
+        
+        var num = 24;
+        var height = 5.8;
+        var center = "Aptech";
+        isAllowed = true;
+        var nothing;
+        nothing = "Something";
+        var n = null;
+
+        document.write("<h3> Non-Primitive/Composite Data Types </h3>");
+
+        var age = [22, 31, 19, 27, 17];
+        var stdDetail = ["Ali", 22, "Karachi", true];
+
+        var obj = {
+            name: "Ahmed",
+            age: 22,
+            isAllowed : false
+        }
+
+        // ---------------------------------------------------------------------------------
+
+        document.write("<h2> ____________________________________________ </h2>");
+
+        document.write("<h2> Variables </h2>");
+
+
+        document.write("<h3> Automatic </h3>");
+
+        a = "This is an Automatic Value";
+        document.write(a);
+
+
+        document.write("<h3> Var </h3>");
+
+        var v = 5;
+        var v = 7;
+        v = 8;
+        document.write(v);  //7
+
+        {
+            var v = 10;
+            document.write(v);  //10
+        }
+
+        document.write(v);  //10
+
+
+        document.write("<h3> Let </h3>");
+
+        let l = 10;
+        l = 15;
+        document.write(l);  //15
+
+        {
+            let l = 20;
+            document.write(l);  //20
+        }
+
+        document.write(l);  //10
+
+        document.write("<h3> Const </h3>");
+        const c = 22;
+        document.write(c);
+
+        // c = 25;
+        // document.write(c);
+
+
+
+        // ---------------------------------------------------------------------------------
+
+        document.write("<h2> Operators </h2>");
+
+        //Unary Opr
+        //Inc/Dec Oprs (++,  --)
+
+        //Binaru Opr
+        // Arithmetic Oprs (+, -, *, /, %, **)
+        // Assignment Oprs (+=, -=, *=, /=, %=, **=)
+        // Relational/Comparison oprs (==, ===, >, >=, <, <=, !=)
+        // Logical Oprs (&&, ||, !)
+
+        //Ternary Opr
+        //Conditional Oprs (? :)
+
+        var a = 10;
+        var b = 3;
+
+        //Arithmetic Oprs (+, -, *, /, %, **)
+        // document.write(a + b + "<br>");
+        // document.write(a - b + "<br>");
+        // document.write(a * b + "<br>");
+        // document.write(a / b + "<br>");
+        // document.write(a % b + "<br>");
+        // document.write(a ** b + "<br>");
+
+        // Assignment Oprs (+=, -=, *=, /=, %=, **=)
+
+        document.write((a += b) + "<br>");
+        document.write((a -= b) + "<br>");
+        document.write((a *= b) + "<br>");
+        document.write((a /= b) + "<br>");
+        document.write((a %= b) + "<br>");
+        document.write((a **= b) + "<br>");
+
+    </script>
+</body>
+</html>

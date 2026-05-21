@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data Types in JSON</h1>
+
+    <script>
+        var dt = {
+            "id" : 1,
+            "name" : "Ali",
+            "CNIC" : true,
+            "marks" : [89, 72, 69, 55, 91],
+            "address" : {
+                "street" : 4,
+                "sector" : 5,
+                "city" : "karachi"
+            }
+        }
+
+        document.write(dt.id);
+        document.write(dt["id"]);
+        document.write(dt["name"]);
+        document.write(dt["address"]["city"]);
+        document.write(dt["address"].city);
+        document.write(dt.address.city);
+    </script>
+</body>
+</html>
