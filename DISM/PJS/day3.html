@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write("<h2> Loops </h2>");
+        // var table = prompt("Enter a Number");
+        // for(var i = 1; i <= 10; i++){
+        //     document.write(table + " X " + i + " = " + table * i + "<br>");
+        // }
+
+        //nested for loop
+        for(var i = 1; i <= 10; i++){
+            for(var j = 1; j <= i; j++){
+                document.write("😄")
+            }
+            document.write("<br>");
+        }
+        for(var i = 1; i <= 10; i++){
+            for(var j = 10; j >= i; j--){
+                document.write("😄")
+            }
+            document.write("<br>");
+        }
+
+        //while
+        // var i = 1;
+        // while(i <= 10){
+        //     document.write(i + " Hello While Loop <br>");
+        //     i++;
+        // }
+
+        var i = 1;
+        while(i < 1){
+            document.write(i + " Hello While Loop <br>");
+            i++;
+        }
+
+        //do while
+        var i = 1;
+        do{
+            document.write(i + " Hello While Loop <br>");
+            i++;
+        }
+        while(i < 1);
+
+
+        document.write("<h2> Jump Statement </h2>");
+         for(var i = 1; i <= 10; i++){
+                if(i % 2 == 0){
+                    continue;
+                }
+                document.write(i);
+            }
+
+         for(var i = 1; i <= 100; i++){
+             document.write(i);
+                    if(i == 11){
+                        break;
+                    }
+            }
+
+
+    document.write("<h2> Function </h2>");
+
+    function myFunction(){
+        document.write("<h1> Hello frinds </h1>");
+        document.write("<h2> How Are you </h2>");
+        document.write("<h3> Hope You are doing Well </h3>");
+        }
+    myFunction();
+
+
+
+    let testing = function(){
+        document.write("<h1> Hello Testing </h1>"); 
+    }
+    testing();
+
+
+//parametarized function
+    function addition(num1, num2){
+        document.write(num1 + num2);
+    }
+
+    // var n1 = +prompt("Enter a number"); 
+    // var n2 = +prompt("Enter another number");
+    // addition(n1, n2);
+
+
+    function greet(name){
+        document.write("Welcome " + name);
+    }
+    var n = prompt("Enter Your Name");
+    greet(n);
+
+
+    </script>
+</body>
+</html>
