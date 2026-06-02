@@ -93,12 +93,32 @@
     // addition(n1, n2);
 
 
-    function greet(name){
-        document.write("Welcome " + name);
-    }
-    var n = prompt("Enter Your Name");
-    greet(n);
+    // function greet(name){
+    //     document.write("Welcome " + name);
+    // }
+    // var n = prompt("Enter Your Name");
+    // greet(n);
 
+    //default parameter function
+    function multipy(n1 , n2 = 4){
+        document.write(n1 * n2);
+    }
+
+    multipy();
+    multipy(5,);
+    multipy(3,7);
+
+    document.write("<br>");
+
+    //return function
+    function sum(a, b){
+        return a + b;
+    }
+
+    var result = sum(4, 7);
+    document.write(result);
+
+    document.write(sum(3, 6) * 2);
 
     </script>
 </body>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="addition()">Click me</button>
+    <button id="btn2">Click Here</button>
+
+    <script>
+         document.write("<h2> Array </h2>");
+
+         var arr1 = [1, 3, 5, 7, 9];  //literal syntax
+         var arr11 = new Array(2, 4, 6, 8, 10); //Contructor Method
+
+         document.write(arr11[3]);
+        //  document.write(arr1[4]);
+
+        arr1[5] = 18;
+        arr1[6] = 19;
+
+        //Array Method/Function
+        arr1.push(11);
+        arr1.pop();
+
+        arr1.unshift(0);
+        arr1.shift();
+
+        // arr1.splice(2, 2, 4);
+        arr2 = arr1.slice(2, 5)
+        document.write(arr2);
+
+
+         for(var i = 0; i < arr1.length; i++){
+            document.write(arr1[i]);
+         }
+
+         for(var i in arr1){
+            document.write(arr1[i]);
+         }
+
+
+         document.write("<h2> Object </h2>");
+
+         var obj1 = {
+            name: "Ali",
+            age: 22, 
+            city: "Karachi"
+         }
+
+         var obj2 = new Object(
+            {
+            name: "Aliyan",
+            age: 22, 
+            city: "Karachi"
+         }
+        );
+
+         document.write(obj2.name)
+
+        //  document.write(obj1["city"]);
+        //  document.write(obj1.city);
+
+        // obj1["email"] = "ali@gmail.com";
+        obj1.email = "ali@gmail.com";
+
+        delete obj1.age;
+
+         for(var i in obj1){
+            document.write(i + ": " + obj1[i] + "<br>");
+         }
+
+
+
+        document.write("<h2> Events </h2>");
+
+        function addition(){
+            console.log( 2+4); 
+        }
+
+        var eventBtn = document.getElementById("btn2");
+        eventBtn.addEventListener('mouseleave', function(){
+            alert("Hey, Why you Click me ?")
+        })
+        
+        // document.getElementById("btn2").addEventListener('click', function(){
+        //     alert("Hey, Why you Click me ?")
+        // })
+
+    </script>
+</body>
+</html>
