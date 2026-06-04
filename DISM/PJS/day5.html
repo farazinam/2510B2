@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>DOM</h1>
+
+    <p id="para1" class="para">Hello DOM</p>
+    <p id="para2" class="para">Hello DOM 2</p>
+
+    <h1>Taking Input from User</h1>
+
+    <hr>
+
+    <form id="form">
+
+        <label for="">Enter Your Name</label>
+        <input type="text">
+        <button type="submit">Get</button> <br>
+        <span></span>
+    </form>
+
+    <hr>
+
+
+    <script>
+        document.write("<h2> Arrow Function </h2>");
+
+        const fatArrowFn = () => document.write("Hello, I am Fat Arrow Function!");
+
+        const sum = (num1 , num2) => {
+            result = num1 + num2
+            document.write(result);
+        }
+
+        fatArrowFn()
+        sum(2,7)
+
+        
+        document.write("<h2> DOM </h2>");
+
+        var getP_byElement = document.getElementsByTagName('p')[0].innerHTML;
+        console.log(getP_byElement);
+
+        var getP_byId = document.getElementById('para1').innerHTML;
+        console.log(getP_byId);
+
+        var getP_byClass = document.getElementsByClassName('para')[0].innerHTML;
+        console.log(getP_byClass);
+
+        var getP_byClass1 = document.getElementsByClassName('para')[0];
+        getP_byClass1.style.color = 'red';
+        getP_byClass1.style.backgroundColor = 'gray';
+
+        var getP_byQuerySel = document.querySelector("p").innerHTML;
+        console.log(getP_byQuerySel);
+
+        var getP_byQuerySelAll = document.querySelectorAll("p");
+        getP_byQuerySelAll.forEach(function(p){
+            p.style.color = "green";
+        });  
+
+
+        
+        document.write("<h2> Taking Input from User By HTML Form </h2>");
+
+        document.getElementById('form').addEventListener('submit', function(){
+            event.preventDefault();
+            var inputValue = document.getElementsByTagName('input')[0].value;
+            document.getElementsByTagName('span')[0].innerHTML = "Welcome " + "<b>" + inputValue + "</b>";
+        });
+
+
+        document.write("<h2> Template Literal </h2>");
+
+        var name = "Ali";
+        var age = 22;
+        var city = "Karachi";
+
+        // document.write("My Name is " + name + " , age is " + age + " and City is " + city);
+
+        document.write(`My name is ${name} , Age is ${age} City is ${city}`);
+
+    </script>
+</body>
+</html>
