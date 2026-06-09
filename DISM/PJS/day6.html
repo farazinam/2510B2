@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para1{
+            color: red;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <p class="">Hello PJS</p>
+
+    <script>
+        var p1 = document.getElementsByTagName("p")[0];
+        p1.classList.add("para1");
+
+        //BOM
+        // window.alert("Hello BOM");
+
+        // console.log(navigator.userAgent);
+        // console.log(navigator.language);
+
+        // console.log(location.href);
+        
+        //Ternary Opr
+        var name = "Ahmed";
+
+        // if(name){
+        //     console.log("Welcome " + name); 
+        // }
+        // else{
+        //     console.log("Welcome Guest");
+        // }
+
+        // var result = (name) ? "Welcome" + name : "Welcome Guest";
+        // console.log(result);
+
+        // console.log((name) ? "Welcome " + name : "Welcome Guest");
+        
+
+        //Desctructuring
+
+        var names = ["Luqman", "Akram", "Umer"];
+        // console.log(names);
+
+        const [a, b, c] = names;  // Desctructuring
+
+        // console.log(a);
+        // console.log(c);
+        
+        //Spread
+
+        var even = [2, 4, 6, 8];
+        var odd = [1, 3, 5, 7];
+
+        var numbers = [...even, ...odd]
+
+        // console.log(even);
+        // console.log(odd);
+        // console.log(numbers);
+        
+        // numbers.sort();
+        // console.log(numbers);
+
+        //Rest
+        const [first, ...others] = [10, 20, 30 ,40];
+        // console.log(first);
+        // console.log(others);
+             
+
+        //Classes and Object
+
+        class Student {
+            n = "Ali";
+            age = 22;
+        }
+        
+        console.log(n);
+        
+    </script>
+</body>
+</html>
