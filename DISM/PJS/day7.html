@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //Classes and Object
+        
+        class Student {
+            n = "Ali";
+            age = 22;
+            
+            abc(){
+                console.log("Hello Student Class Member");
+            }
+        }
+
+        class Teacher {
+            n = "Faraz";
+            age = 24;
+
+            abc(){
+                console.log("Hello Teacher Class Member");
+            }
+        }
+        
+        // console.log(n);
+        // console.log(age);
+        // abc();
+
+        std = new Student(); //obj of class
+        console.log(std.n);
+        console.log(std.age);
+        std.abc();
+
+        t = new Teacher(); //obj of class
+        console.log(t.n);
+        console.log(t.age);
+        t.abc();
+
+
+        class Employee {
+            id;
+            name;
+
+            constructor(id, name){
+                this.id = id;
+                this.name = name;
+            }
+
+            employee(){
+                console.log(`My ID is ${this.id} and Name is ${this.name}`);
+            }
+        }
+
+        emp = new Employee(123, "Hassan");
+        emp.employee();
+        
+    </script>
+</body>
+</html>

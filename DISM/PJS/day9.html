@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // Call Back function
+
+        //eg: 1
+        // function greet(name, callback){
+        //     document.write("Hello "+ name);
+        //     callback();
+        // }
+
+        // function callBackFn(){
+        //     document.write("Hello Callback function");
+        // }
+
+        // greet("Ali ", callBackFn);
+
+        //eg: 2
+        // function fetchData(callback){
+        //     setTimeout(() => {
+        //         document.write("Data Fetched");
+        //         callback();
+        //     }, 3000);
+        // }
+
+        // function processing(){
+        //    document.write("Data is Processing..."); 
+        // }
+
+        // fetchData();
+        // processing();
+
+
+        //Exception Handling (try-catch)
+
+        try{
+            let user = riskyOperation();
+            console.log(user);
+        }
+        catch(e){
+            console.log("Error Occur " + e.message);
+        }
+        finally{
+            console.log("This is Finally Block");  
+        }
+
+        // let user = riskyOperation();
+        //     console.log(user);
+
+        var age = 22;
+        console.log(age);
+        
+    </script>
+</body>
+</html>

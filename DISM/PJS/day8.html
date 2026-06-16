@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Synchronuous VS Asynchronous</h1>
+
+    <script>
+        //synchronuous
+
+        function longTask(){
+            let start = Date.now();
+            while(Date.now() - start < 3000){}
+        }
+
+        // console.log("Starting...");
+        // longTask();  //calculation
+        // console.log("Ending...");
+
+        //asynchronuous
+
+        // console.log("Starting...");
+        // setTimeout(() => {
+        //     console.log("Between");
+        // }, 5000);
+        // console.log("End");
+            
+    </script>
+</body>
+</html>
