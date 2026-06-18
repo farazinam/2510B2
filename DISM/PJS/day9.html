@@ -12,31 +12,31 @@
         // Call Back function
 
         //eg: 1
-        // function greet(name, callback){
-        //     document.write("Hello "+ name);
-        //     callback();
-        // }
+        function greet(name, callback){
+            document.write("Hello "+ name);
+            callback();
+        }
 
-        // function callBackFn(){
-        //     document.write("Hello Callback function");
-        // }
+        function callBackFn(){
+            document.write("Hello Callback function");
+        }
 
-        // greet("Ali ", callBackFn);
+        greet("Ali ", callBackFn);
 
         //eg: 2
-        // function fetchData(callback){
-        //     setTimeout(() => {
-        //         document.write("Data Fetched");
-        //         callback();
-        //     }, 3000);
-        // }
+        function fetchData(callback){
+            setTimeout(() => {
+                document.write("Data Fetched");
+                callback();
+            }, 3000);
+        }
 
-        // function processing(){
-        //    document.write("Data is Processing..."); 
-        // }
+        function processing(){
+           document.write("Data is Processing..."); 
+        }
 
-        // fetchData();
-        // processing();
+        fetchData();
+        processing();
 
 
         //Exception Handling (try-catch)
@@ -52,8 +52,8 @@
             console.log("This is Finally Block");  
         }
 
-        // let user = riskyOperation();
-        //     console.log(user);
+        let user = riskyOperation();
+            console.log(user);
 
         var age = 22;
         console.log(age);
