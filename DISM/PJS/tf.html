@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+</head>
+
+<body>
+
+    <form onsubmit="classifyImage(event)">
+        <input type="file" id="image" accept="image/*">
+        <input type="submit" value="Submit">
+    </form>
+
+    <img id="preview" width="300">
+
+    <script>
+        async function classifyImage(event) {
+            event.preventDefault();
+
+            await tf.setBackend('cpu');
+            await tf.ready();
+
+            const model = await mobilenet.load();
+
+            const fileInput = document.getElementById('image');
+
+            if (!fileInput.files.length) {
+                alert('Select an image first');
+                return;
+            }
+
+            const img = document.getElementById('preview');
+
+            img.src = URL.createObjectURL(fileInput.files[0]);
+
+            await new Promise(resolve => {
+                img.onload = resolve;
+            });
+
+            const predictions = await model.classify(img);
+
+            console.log(predictions);
+        }
+    </script>
+
+</body>
+
+</html>
