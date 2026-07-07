@@ -223,4 +223,35 @@ SELECT department, SUM(salary) FROM employees GROUP BY department;
 SELECT department, SUM(salary) FROM employees WHERE salary > 70000 GROUP BY department;
 
 -- Logical (AND OR)
+SELECT * FROM employees WHERE salary > 70000 and department = 'Marketing';
+SELECT * FROM employees WHERE salary > 70000 and department = 'Finance';
 
+SELECT * FROM employees WHERE salary > 70000 OR department = 'Marketing';
+SELECT * FROM employees WHERE salary > 70000 OR department = 'Finance';
+
+SELECT * FROM employees WHERE salary > 70000;
+SELECT * FROM employees WHERE salary > 70000 AND (performance_rating > 3 OR department = 'Marketing');
+SELECT * FROM employees WHERE salary > 80000 AND (performance_rating > 3 OR department = 'IT');
+SELECT * FROM employees WHERE (salary > 80000 AND performance_rating > 3) OR department = 'IT';
+
+-- BETWEEN
+SELECT * FROM employees;
+SELECT * FROM employees WHERE salary BETWEEN 50000 AND 60000;
+SELECT * FROM employees WHERE salary BETWEEN 90000 AND 95000;
+UPDATE employees SET salary = salary*1.10 WHERE salary BETWEEN 90000 AND 95000;
+SET SQL_SAFE_UPDATES = 0;
+SELECT * FROM employees WHERE salary BETWEEN 99000 AND 110000;
+
+-- Day 6 ----------------
+
+-- IN Operator
+SELECT * FROM employees WHERE department IN ('Sales', 'Marketing', 'IT');
+SELECT * FROM employees WHERE NOT department IN ('Sales', 'Marketing', 'IT');
+SELECT * FROM employees WHERE department = 'Sales' OR department = 'Marketing' OR department = 'IT';
+
+SELECT * FROM employees WHERE first_name LIKE 'A%';
+SELECT * FROM employees WHERE first_name LIKE '%A';
+SELECT * FROM employees WHERE first_name LIKE '%A%';
+SELECT * FROM employees WHERE first_name LIKE '%A__';
+SELECT * FROM employees WHERE first_name LIKE '_A_';
+SELECT * FROM employees WHERE first_name LIKE 'A__';
