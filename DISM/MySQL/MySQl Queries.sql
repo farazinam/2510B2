@@ -249,9 +249,60 @@ SELECT * FROM employees WHERE department IN ('Sales', 'Marketing', 'IT');
 SELECT * FROM employees WHERE NOT department IN ('Sales', 'Marketing', 'IT');
 SELECT * FROM employees WHERE department = 'Sales' OR department = 'Marketing' OR department = 'IT';
 
+-- LIKE Operator
 SELECT * FROM employees WHERE first_name LIKE 'A%';
 SELECT * FROM employees WHERE first_name LIKE '%A';
 SELECT * FROM employees WHERE first_name LIKE '%A%';
 SELECT * FROM employees WHERE first_name LIKE '%A__';
 SELECT * FROM employees WHERE first_name LIKE '_A_';
 SELECT * FROM employees WHERE first_name LIKE 'A__';
+
+
+-- Day 7 ----------------
+
+-- JOINS
+
+CREATE TABLE department (
+id INT PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE employee (
+id INT PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR(100) NOT NULL, 
+city VARCHAR(100) DEFAULT 'Karachi',
+salary INT NOT NULL,
+department_id INT,
+FOREIGN KEY (department_id) REFERENCES department (id)
+);
+
+INSERT INTO department(name)
+VALUES ('HR'),
+('Marketing'),
+('Engineering');
+
+INSERT INTO employee(name, city, salary, department_id)
+VALUES ('Ali', 'Karachi', 15000, 1),
+('Daniyal', 'Lahore', 17000, 3),
+('Muntazir', 'Lahore', 16500, 1),
+('Ahmed', 'Karachi', 15000, NULL),
+('Hassan', 'Lahore', 14000, NULL),
+('Shariq', 'Islamabad', 17500, 1);
+
+SELECT * FROM department;
+SELECT * FROM employee;
+
+SELECT * FROM employee
+JOIN department
+ON department.id = employee.department_id;
+
+SELECT employee.name, employee.city,  employee.salary, department.name 
+FROM employee
+JOIN department
+ON department.id = employee.department_id;
+
+SELECT e.name, e.city,  e.salary, d.name 
+FROM employee AS e
+JOIN department AS d
+ON d.id = e.department_id;
+
