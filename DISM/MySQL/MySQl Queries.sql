@@ -292,6 +292,7 @@ VALUES ('Ali', 'Karachi', 15000, 1),
 SELECT * FROM department;
 SELECT * FROM employee;
 
+-- INNER JOIN
 SELECT * FROM employee
 JOIN department
 ON department.id = employee.department_id;
@@ -306,3 +307,85 @@ FROM employee AS e
 JOIN department AS d
 ON d.id = e.department_id;
 
+
+-- Day 8 ----------------
+
+-- OUTER JOIN
+
+-- LEFT JOIN
+SELECT e.name, e.city,  e.salary, d.name 
+FROM employee AS e
+LEFT JOIN department AS d
+ON d.id = e.department_id;
+
+-- RIGHT JOIN
+SELECT e.name, e.city,  e.salary, d.name 
+FROM employee AS e
+RIGHT JOIN department AS d
+ON d.id = e.department_id;
+
+-- FULL JOIN
+SELECT e.name, e.city,  e.salary, d.name 
+FROM employee AS e
+RIGHT JOIN department AS d
+ON d.id = e.department_id
+UNION
+SELECT e.name, e.city,  e.salary, d.name 
+FROM employee AS e
+LEFT JOIN department AS d
+ON d.id = e.department_id;
+
+-- JOIN OF 3 Tables
+CREATE TABLE product (
+pid INT PRIMARY KEY AUTO_INCREMENT,
+pname VARCHAR(100) NOT NULL,
+price INT NOT NULL
+);
+
+CREATE TABLE customer (
+cid INT PRIMARY KEY,
+cname VARCHAR(100) NOT NULL,
+city VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE orders (
+oid INT PRIMARY KEY ,
+qty INT NOT NULL,
+order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+p_id INT,
+c_id INT,
+FOREIGN KEY (p_id) REFERENCES product (pid),
+FOREIGN KEY (c_id) REFERENCES customer (cid)
+);
+
+
+INSERT INTO product(pname, price)
+VALUES('Bottle', 2600), 
+('Perfume', 5500), 
+('Smart Watch', 9500), 
+('EarBuds', 3700);
+
+INSERT INTO customer (cid, cname, city)
+VALUES (101, 'Ali', 'Karachi'),
+(102, 'Hassan', 'Lahore'), 
+(103, 'Zia', 'Karachi');
+
+INSERT INTO orders (oid, qty, p_id, c_id)
+VALUES(1001, 1, 1, 101),
+(1002, 2, 1, 102),
+(1003, 3, 2, 101),
+(1004, 2, 3, 102);
+
+-- INNER JOIN 
+SELECT * FROM orders
+JOIN product
+ON orders.p_id = product.pid
+JOIN customer
+ON orders.c_id = customer.cid;
+
+SELECT c.cname, c.city, p.pname, p.price, o.qty, o.order_date 
+FROM orders AS o
+JOIN product AS p
+ON o.p_id = p.pid
+JOIN customer AS c
+ON o.c_id = c.cid;
