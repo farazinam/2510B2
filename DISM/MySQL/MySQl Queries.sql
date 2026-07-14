@@ -389,3 +389,54 @@ JOIN product AS p
 ON o.p_id = p.pid
 JOIN customer AS c
 ON o.c_id = c.cid;
+
+
+-- Day 9 ----------------
+
+-- SELF JOIN
+
+CREATE TABLE emp_manager (
+employee_id INT PRIMARY KEY AUTO_INCREMENT,
+employee_name VARCHAR(100),
+manager_id INT,
+FOREIGN KEY (manager_id) REFERENCES emp_manager (employee_id)
+);
+
+INSERT INTO emp_manager (employee_name, manager_id)
+VALUES ('Hamza', NULL),
+('Shahzaib', NULL), ('Owais', NULL), 
+('Tehreem', NULL), ('Hassan', NULL), ('Atif', NULL);
+
+UPDATE emp_manager 
+SET manager_id = 7 WHERE employee_id = 6;
+
+SELECT * FROM emp_manager;
+
+SELECT e.employee_name AS Employee, m.employee_name AS Manager
+FROM emp_manager AS e
+LEFT JOIN emp_manager AS m
+ON e.manager_id = m.employee_id;
+
+
+-- CROSS JOIN
+CREATE TABLE colors
+(id INT PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR (100));
+
+CREATE TABLE sizes
+(id INT PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR (100));
+
+INSERT INTO colors (name)
+VALUES ("Red"), ("Green"), ("Blue");
+
+INSERT INTO sizes (name)
+VALUES ("Small"), ("Medium"), ("Large");
+
+SELECT * FROM colors
+CROSS JOIN sizes;
+
+SELECT * FROM colors;
+SELECT * FROM size;
+
+
