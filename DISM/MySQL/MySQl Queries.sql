@@ -440,3 +440,70 @@ SELECT * FROM colors;
 SELECT * FROM size;
 
 
+-- Day 10 ----------------
+
+SELECT MAX(salary) FROM employees;
+SELECT *, MAX(salary) FROM employees;
+SELECT *, MIN(salary) FROM employees;
+
+SELECT employee_id, first_name, last_name, 
+email, department, MAX(salary) AS MaxSalary, hire_date, performance_rating, manager_id 
+FROM employees;
+
+-- Subquery
+SELECT * FROM employees
+WHERE salary IN (SELECT MAX(salary) FROM employees);
+
+SELECT * FROM employees
+WHERE salary IN (SELECT MIN(salary) FROM employees);
+
+SELECT pname
+FROM product
+WHERE pid IN (SELECT p_id FROM orders WHERE c_id = 101);
+
+CREATE TABLE employee2 (
+employee_id INT, 
+employee_name VARCHAR(100), 
+salary INT
+);
+
+SELECT * FROM employee2;
+SELECT * FROM employee;
+
+INSERT INTO employee2 (employee_id, employee_name, salary)
+SELECT id, name, salary
+FROM employee
+WHERE salary > (SELECT AVG(salary) FROM employee);
+
+UPDATE employee SET salary = salary * 1.1
+WHERE department_id IN (SELECT id FROM department WHERE name = 'HR');
+
+SET SQL_SAFE_UPDATES = 0;
+
+DELETE FROM orders
+WHERE customer_id IN (SELECT customer_id 
+FROM customers WHERE customer_id NOT IN (SELECT customer_id FROM payments));
+
+-- Store Procedure
+
+DELIMITER //
+CREATE PROCEDURE sp_emps()
+BEGIN
+SELECT * FROM employees;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE sp_selfjoin()
+BEGIN
+SELECT e.employee_name AS Employee, m.employee_name AS Manager
+FROM emp_manager AS e
+LEFT JOIN emp_manager AS m
+ON e.manager_id = m.employee_id;
+END //
+DELIMITER ;
+
+CALL sp_emps();
+CALL sp_selfjoin();
+
+
