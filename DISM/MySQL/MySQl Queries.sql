@@ -506,4 +506,73 @@ DELIMITER ;
 CALL sp_emps();
 CALL sp_selfjoin();
 
+-- Day 11 ----------------
+
+SELECT * FROM employees;
+-- Parametarize stoed Procedure
+
+DELIMITER //
+CREATE PROCEDURE sp_empDep(IN dept VARCHAR(100))
+BEGIN
+SELECT * FROM employees WHERE department = dept;
+END //
+DELIMITER ;
+
+CALL sp_empDep('Marketing');
+
+DELIMITER //
+CREATE PROCEDURE sp_empDepSal(IN dept VARCHAR(100), sal INT)
+BEGIN
+SELECT * FROM employees WHERE department = dept AND salary > sal;
+END //
+DELIMITER ;
+
+CALL sp_empDepSal('Marketing', 60000);
+CALL sp_empDepSal('HR', 40000);
+
+SHOW PROCEDURE STATUS;
+SHOW PROCEDURE STATUS WHERE NAME LIKE '%n';
+DROP PROCEDURE sp_emps;
+
+-- VIEWS
+
+CREATE VIEW vw_emps
+AS
+SELECT * FROM employees;
+
+CREATE VIEW vw_emps2
+AS
+SELECT first_name, department, hire_date FROM employees;
+
+CREATE VIEW vw_emps3
+AS
+SELECT CONCAT(first_name, ' ', last_name) AS FullName, department, hire_date FROM employees;
+
+SELECT * FROM employees;  -- select table
+SELECT * FROM vw_emps;  -- select view
+SELECT * FROM vw_emps2;  -- select view
+SELECT * FROM vw_emps3;  -- select view
+
+-- Alter View for modification
+ALTER VIEW vw_empDep
+AS
+SELECT c.cname, c.city, p.pname, p.price, o.order_date 
+FROM orders AS o
+JOIN product AS p
+ON o.p_id = p.pid
+JOIN customer AS c
+ON o.c_id = c.cid;
+
+SELECT * FROM vw_empDep;
+
+-- Drop View
+DROP VIEW vw_emps;
+
+
+
+
+
+
+
+
 
