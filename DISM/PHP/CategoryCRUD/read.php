@@ -2,7 +2,6 @@
 $conn = mysqli_connect("localhost", "root", "", "miniproject");
 
 $sel = "SELECT * FROM category";
-
 $q = mysqli_query($conn, $sel);
 
 ?>
@@ -21,12 +20,15 @@ $q = mysqli_query($conn, $sel);
         <tr>
             <th>Category ID</th>
             <th>Category Name</th>
+            <th>Action</th>
         </tr>
 
         <?php while($fetch = mysqli_fetch_array($q)){ ?>
         <tr>
             <td> <?php echo $fetch["category_id"] ?> </td>
             <td> <?php echo $fetch["category_name"] ?> </td>
+            <td> <a href="delete.php?id=<?php echo $fetch["category_id"] ?>">Delete</a> </td>
+            <td> <a href="update.php?id=<?php echo $fetch["category_id"] ?>">Edit</a> </td>
         </tr>
         <?php } ?>
         

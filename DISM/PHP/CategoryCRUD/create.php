@@ -20,6 +20,7 @@ $conn = mysqli_connect("localhost", "root", "", "miniproject");
         <input type="text" name="category">
         <button name="catbtn">Add Category</button>
     </form>
+    <a href="read.php">View Category</a>
 </body>
 </html>
 
