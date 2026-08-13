@@ -49,11 +49,17 @@ if(ISSET($_REQUEST["addProduct"])){
 
     if(is_uploaded_file($imgtmpname)){
         move_uploaded_file($imgtmpname, $folder);
+
+        $ins = "INSERT INTO `product`(`product_name`, `product_price`, `product_description`, `product_image`) 
+        VALUES ('$pn','$pp','$pd','$imgname')";
+    
+        $q = mysqli_query($conn, $ins);
+
+        if($q){
+            echo "Product Added";
+        }
+
     }
-
-    $ins = "INSERT INTO `product`(`product_name`, `product_price`, `product_description`, `product_image`) 
-    VALUES ('$pn','$pp','$pd','$imgname')";
-
 
 }
 ?>
