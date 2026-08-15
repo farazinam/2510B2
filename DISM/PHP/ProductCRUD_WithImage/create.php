@@ -56,7 +56,10 @@ if(ISSET($_REQUEST["addProduct"])){
         $q = mysqli_query($conn, $ins);
 
         if($q){
-            echo "Product Added";
+            echo "<script>
+            alert('record inserted');
+            window.location.href = 'read.php';
+            </script>";
         }
 
     }
