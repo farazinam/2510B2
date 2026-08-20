@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "miniproject");
+include("config.php");
 include "header.php";
 
 $sel = "SELECT * FROM category";
@@ -20,11 +20,11 @@ $q = mysqli_query($conn, $sel);
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                    
-                    <div class="col-sm-12 col-xl-6">
+                    <div class="col-sm-12 col-xl-12">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">All Categories</h6>
                             <table class="table table-hover">
-                                <thead>
+                                <thead class="bg-dark">
                                     <tr>
                                         <th scope="col">Category ID</th>
                                         <th scope="col">Category Name</th>
@@ -34,11 +34,11 @@ $q = mysqli_query($conn, $sel);
                                 <tbody>
                                     <?php while($fetch = mysqli_fetch_array($q)){ ?>
                                     <tr>
-                                        <th scope="row"> <?php echo $fetch["category_id"] ?> </th>
-                                        <td> <?php echo $fetch["category_name"] ?> </td>
+                                        <th scope="row"> <?php echo $fetch[0] ?> </th>
+                                        <td> <?php echo $fetch[1] ?> </td>
                                         <td>
-                                            <a href="update.php?id=<?php echo $fetch["category_id"] ?>"  class="btn btn-warning">Edit</a>
-                                            <a href="update.php?id=<?php echo $fetch["category_id"] ?>"  class="btn btn-danger">Delete</a>
+                                            <a href="updateCategory.php?id=<?php echo $fetch["category_id"] ?>"  class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                            <a href="deleteCategory.php?id=<?php echo $fetch["category_id"] ?>"  class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php } ?>

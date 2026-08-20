@@ -1,13 +1,16 @@
-
 <?php
 include("config.php");
-include("header.php");
-?>
+include "header.php";
+$getId = $_GET["id"];
 
+$sel = "SELECT * FROM category WHERE category_id = '$getId'";
+$q = mysqli_query($conn, $sel);
+
+$fetch = mysqli_fetch_array($q);
+?>
             <!-- Form Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Add Category</h6>
@@ -15,11 +18,9 @@ include("header.php");
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Category Name</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" name="category">  
-                                </div>
-
-                                
-                                <button type="submit" class="btn btn-primary" name="catbtn">Add Category</button>
+                                        aria-describedby="emailHelp" name="category" value="<?php echo $fetch["category_name"] ?>">  
+                                </div>                      
+                                <button type="submit" class="btn btn-primary" name="updbtn">Add Category</button>
                             </form>
                         </div>
                     </div>
@@ -27,21 +28,16 @@ include("header.php");
                 </div>
             </div>
             <!-- Form End -->
-
 <?php
-include "footer.php";
+if(ISSET($_POST['updbtn'])){
+    $cat = $_POST['category'];
 
-if(ISSET($_POST['catbtn'])){
-    $catname = $_POST['category'];
+    $upd = "UPDATE category SET category_name = '$cat' WHERE category_id = $getId";
+    $q = mysqli_query($conn, $upd);
 
-    $ins = "INSERT INTO category (category_name) 
-    VALUES ('$catname')";
-
-    $done = mysqli_query($conn, $ins);
-
-    if($done){
-        echo "Category Added Successfully!";
+    if($q){
+        echo "Record Updated!";
     }
-
 }
+include "footer.php";
 ?>
