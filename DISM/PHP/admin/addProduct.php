@@ -1,7 +1,9 @@
-
 <?php
 include("config.php");
 include("header.php");
+
+$sel = "SELECT * FROM category";
+$q = mysqli_query($conn, $sel);
 ?>
 
             <!-- Form Start -->
@@ -33,6 +35,16 @@ include("header.php");
                                         aria-describedby="emailHelp" name="proimage">  
                                 </div>
 
+                                 <select name="catid" class="form-select mb-3" aria-label="Default select example">
+                                <option selected disabled>Select Category</option>
+
+                                <?php while($fetch = mysqli_fetch_array($q)){ ?>
+                                <option value="<?php echo $fetch[0] ?>"> <?php echo $fetch[1] ?> </option>
+                                <?php } ?>
+
+
+                            </select>
+
                                 
                                 <button type="submit" class="btn btn-primary" name="addProduct">Add Product</button>
                             </form>
@@ -50,6 +62,7 @@ if(ISSET($_REQUEST["addProduct"])){
     $pn = $_REQUEST["proname"];
     $pp = $_REQUEST["proprice"];
     $pd = $_REQUEST["prodesc"];
+    $cid = $_REQUEST["catid"];
     $pi = $_FILES["proimage"];
 
     $imgname = $pi["name"];
@@ -64,8 +77,8 @@ if(ISSET($_REQUEST["addProduct"])){
     if(is_uploaded_file($imgtmpname)){
         move_uploaded_file($imgtmpname, $folder);
 
-        $ins = "INSERT INTO `product`(`product_name`, `product_price`, `product_description`, `product_image`) 
-        VALUES ('$pn','$pp','$pd','$imgname')";
+        $ins = "INSERT INTO `product`(`product_name`, `product_price`, `product_description`, `product_image`, `category_id`) 
+        VALUES ('$pn','$pp','$pd','$imgname', '$cid')";
     
         $q = mysqli_query($conn, $ins);
 
