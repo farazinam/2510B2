@@ -2,7 +2,9 @@
 include("config.php");
 include "header.php";
 
-$sel = "SELECT * FROM product";
+$sel = "SELECT * FROM product
+INNER JOIN category
+ON category.category_id = product.category_id";
 $q = mysqli_query($conn, $sel);
 
 ?>
@@ -22,6 +24,7 @@ $q = mysqli_query($conn, $sel);
                                         <th scope="col">Product Price</th>
                                         <th scope="col">Product Description</th>
                                         <th scope="col">Product Image</th>
+                                        <th scope="col">Category Name</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -33,6 +36,7 @@ $q = mysqli_query($conn, $sel);
                                         <td> <?php echo $fetch[2] ?> </td>
                                         <td> <?php echo $fetch[3] ?> </td>
                                         <td> <img src="images/<?php echo $fetch[4] ?>" alt="" width="100px"> </td>
+                                        <td> <?php echo $fetch[7] ?> </td>
                                         <td>
                                             <a href="updateProduct.php?id=<?php echo $fetch["product_id"] ?>"  class="btn btn-warning"><i class="fa fa-edit"></i></a>
                                             <a href="deleteProduct.php?id=<?php echo $fetch["product_id"] ?>"  class="btn btn-danger"><i class="fa fa-trash"></i></a>
