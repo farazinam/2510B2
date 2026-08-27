@@ -1,5 +1,10 @@
 <?php
 include "header.php";
+include "../admin/config.php";
+
+$sel = "SELECT * FROM product LIMIT 3";
+$q = mysqli_query($conn, $sel);
+
 ?>
 
 	<!-- hero area -->
@@ -80,36 +85,18 @@ include "header.php";
 			</div>
 
 			<div class="row">
+				<?php while($fetch = mysqli_fetch_array($q)){ ?>
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="single-product.html"><img src="../admin/images/<?php echo $fetch['product_image'] ?>" alt=""></a>
 						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
+						<h3> <?php echo $fetch['product_name'] ?></h3>
+						<p class="product-price"> <?php echo $fetch['product_price'] ?> </p>
 						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>

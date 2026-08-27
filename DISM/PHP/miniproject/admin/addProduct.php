@@ -85,7 +85,7 @@ if(ISSET($_REQUEST["addProduct"])){
         if($q){
             echo "<script>
             alert('record inserted');
-            window.location.href = 'read.php';
+            window.location.href = 'viewProduct.php';
             </script>";
         }
 
