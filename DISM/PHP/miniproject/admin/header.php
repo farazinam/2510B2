@@ -78,6 +78,14 @@
                         </div>
                     </div>
 
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-user me-2"></i>Role</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="addRole.php" class="dropdown-item">Add Role</a>
+                            <a href="viewRole.php" class="dropdown-item">View Role</a>
+                        </div>
+                    </div>
+
 
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
