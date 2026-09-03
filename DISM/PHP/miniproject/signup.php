@@ -109,7 +109,7 @@ if(ISSET($_REQUEST['signUpBtn'])){
     $un = $_REQUEST['username'];
     $em = $_REQUEST['email'];
     $ps = $_REQUEST['password'];
-    $roleId = 1;
+    $roleId = 2;
 
     $ins = "INSERT INTO `users` (username, email, `password`, role_id)
     VALUES ('$un', '$em', '$ps', '$roleId')";
