@@ -106,35 +106,37 @@ if(ISSET($_REQUEST["signInBtn"])){
     $em = $_REQUEST["email"];
     $ps = $_REQUEST["password"];
 
-    $sel = "SELECT * FROM users 
-    WHERE email = '$em' && `password` = '$ps'";
+    $sel = "SELECT * FROM users WHERE email = '$em'";
     $q = mysqli_query($conn, $sel);
 
     $rowCount = mysqli_num_rows($q);   // count # of rows
     // echo $rowCount;
 
     $fetch = mysqli_fetch_array($q);
+    $getPassword = $fetch["password"];
 
-    // $_SESSION['emailSession'] = $fetch["email"];
-    // $_SESSION['nameSession'] = $fetch["username"];
-    $_SESSION['roleSession'] = $fetch["role_id"];
-
-    if($rowCount > 0){
-        if($_SESSION['roleSession'] == 1){
-            echo '<script>
-            window.location.href = "admin/index.php";
+    if($rowCount == 0){
+        echo '<script>
+            alert("Invalid User");
             </script>';
-        }
-        else{
-            echo '<script>
-            window.location.href = "user/index.php";
-            </script>';
-        }
     }
     else{
-        echo "<script>
-            alert('Username or Password is Incorrect');
-            </script>";
-    }
+        if(password_verify($ps, $getPassword)){
+            // $_SESSION['emailSession'] = $fetch["email"];
+            // $_SESSION['nameSession'] = $fetch["username"];
+            $_SESSION['roleSession'] = $fetch["role_id"];
+
+            if($_SESSION['roleSession'] == 1){
+                echo '<script>
+                window.location.href = "admin/index.php";
+                </script>';
+            }
+            else{
+                echo '<script>
+                window.location.href = "user/index.php";
+                </script>';
+            }
+        }
+    } 
 }
 ?>

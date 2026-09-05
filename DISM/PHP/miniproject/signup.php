@@ -111,8 +111,22 @@ if(ISSET($_REQUEST['signUpBtn'])){
     $ps = $_REQUEST['password'];
     $roleId = 2;
 
+    $hashPassword = password_hash($ps, PASSWORD_DEFAULT);
+
+    $sel = "SELECT * FROM users WHERE email = '$em'";
+    $q = mysqli_query($conn, $sel);
+
+    $rowCount = mysqli_num_rows($q);
+
+
+    if($rowCount > 0){
+        echo "<script>
+        alert('Account already Registered');
+        </script>";
+    }
+    else{
     $ins = "INSERT INTO `users` (username, email, `password`, role_id)
-    VALUES ('$un', '$em', '$ps', '$roleId')";
+    VALUES ('$un', '$em', '$hashPassword', '$roleId')";
     $q = mysqli_query($conn, $ins);
 
     if($q){
@@ -121,5 +135,6 @@ if(ISSET($_REQUEST['signUpBtn'])){
         window.location.href = 'signin.php';
         </script>";
     }
+}
 }
 ?>
