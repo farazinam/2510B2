@@ -1,44 +1,65 @@
 <?php
+include("config.php");
 include "header.php";
+
+//Product Count
+$sel = "SELECT COUNT(*) AS procount FROM product";
+$proQ = mysqli_query($conn, $sel);
+$fetchPro = mysqli_fetch_array($proQ);
+
+//Category Count
+$sel = "SELECT COUNT(*) AS catcount FROM category";
+$catQ = mysqli_query($conn, $sel);
+$fetchCat = mysqli_fetch_array($catQ);
+
+//Users Count
+$sel = "SELECT COUNT(*) AS usercount FROM users";
+$userQ = mysqli_query($conn, $sel);
+$fetchUser = mysqli_fetch_array($userQ);
+
+//Roles Count
+$sel = "SELECT COUNT(*) AS rolecount FROM `role`";
+$roleQ = mysqli_query($conn, $sel);
+$fetchRole = mysqli_fetch_array($roleQ);
 ?>
 
 
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
+                    <div class="col-sm-6 col-xl-6">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Total Products</p>
+                                <h6 class="mb-0"> <?php echo$fetchPro["procount"] ?></h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xl-3">
+                    <div class="col-sm-6 col-xl-6">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Total Categories</p>
+                                <h6 class="mb-0"> <?php echo$fetchCat["catcount"] ?> </h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xl-3">
+                    <div class="col-sm-6 col-xl-6">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Total Users</p>
+                                <h6 class="mb-0"> <?php echo$fetchUser["usercount"] ?> </h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xl-3">
+                    <div class="col-sm-6 col-xl-6">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Total Role</p>
+                                <h6 class="mb-0"> <?php echo $fetchRole["rolecount"] ?> </h6>
                             </div>
                         </div>
                     </div>

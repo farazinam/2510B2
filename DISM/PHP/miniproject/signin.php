@@ -123,7 +123,7 @@ if(ISSET($_REQUEST["signInBtn"])){
     else{
         if(password_verify($ps, $getPassword)){
             // $_SESSION['emailSession'] = $fetch["email"];
-            // $_SESSION['nameSession'] = $fetch["username"];
+            $_SESSION['nameSession'] = $fetch["username"];
             $_SESSION['roleSession'] = $fetch["role_id"];
 
             if($_SESSION['roleSession'] == 1){
