@@ -1,3 +1,9 @@
+<?php 
+session_start();
+$username = $_SESSION['nameSession'] ?? '<a href="../signin.php"> Login </a>';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,10 +98,14 @@
 										<li><a href="cart.html">Cart</a></li>
 									</ul>
 								</li>
+
+								<li class="text-white font-weight-bold"> <?php echo $username ?> </li>
+
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										<a class="mobile-hide search-bar-icon" href="../logout.php"><i class="fas fa-sign-out-alt"></i></a>
 									</div>
 								</li>
 							</ul>

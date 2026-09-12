@@ -1,6 +1,18 @@
 <?php 
 session_start();
 $username = $_SESSION['nameSession'];
+$roleId = $_SESSION['roleSession'];
+
+if($roleId == null){
+    echo "<script>
+    window.location.href = '../signin.php';
+    </script>";
+}
+else if($roleId == 2){
+    echo "<script>
+    window.location.href = '../user/index.php';
+    </script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -92,7 +104,7 @@ $username = $_SESSION['nameSession'];
                     </div>
 
 
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href="accounts.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Users</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
