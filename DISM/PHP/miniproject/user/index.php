@@ -1,6 +1,5 @@
 <?php
 include "header.php";
-include "../admin/config.php";
 
 $sel = "SELECT * FROM product LIMIT 3";
 $q = mysqli_query($conn, $sel);

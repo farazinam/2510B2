@@ -1,6 +1,11 @@
 <?php 
+include "../admin/config.php";
 session_start();
-$username = $_SESSION['nameSession'] ?? '<a href="../signin.php"> Login </a>';
+$username = $_SESSION['nameSession'] ?? '<a href="../signin.php"> Welcome Guest </a>';
+$isLoggedIn = $_SESSION['roleSession'] ?? null;
+
+$selCat = "SELECT * FROM category";
+$q = mysqli_query($conn, $selCat);
 ?>
 
 
@@ -89,6 +94,16 @@ $username = $_SESSION['nameSession'] ?? '<a href="../signin.php"> Login </a>';
 										<li><a href="single-news.html">Single News</a></li>
 									</ul>
 								</li>
+
+								<li><a href="news.html">Categories</a>
+								<ul class="sub-menu">
+										<?php while($fetch = mysqli_fetch_array($q)){ ?>
+										<li><a href="news.html"> <?php echo $fetch[1] ?> </a></li>
+										<?php } ?>
+									</ul>
+								</li>
+
+
 								<li><a href="contact.html">Contact</a></li>
 								<li><a href="shop.html">Shop</a>
 									<ul class="sub-menu">
@@ -105,7 +120,13 @@ $username = $_SESSION['nameSession'] ?? '<a href="../signin.php"> Login </a>';
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="mobile-hide search-bar-icon" href="../logout.php"><i class="fas fa-sign-out-alt"></i></a>
+										<!-- <a class="mobile-hide search-bar-icon" href="../logout.php"><i class="fas fa-sign-out-alt"></i></a> -->
+										<?php if(!$isLoggedIn == null){ ?> 
+											<a href="../logout.php"><i class="fas fa-sign-out-alt"></i></a>  
+											<?php } 
+											else { ?> 
+											<a href="../signin.php"><i class="fas fa-user"></i></a> 
+											<?php }?> 
 									</div>
 								</li>
 							</ul>
