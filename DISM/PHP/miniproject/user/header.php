@@ -98,7 +98,7 @@ $q = mysqli_query($conn, $selCat);
 								<li><a href="news.html">Categories</a>
 								<ul class="sub-menu">
 										<?php while($fetch = mysqli_fetch_array($q)){ ?>
-										<li><a href="news.html"> <?php echo $fetch[1] ?> </a></li>
+										<li><a href="productByCategory.php?id=<?php echo $fetch[0] ?> "> <?php echo $fetch[1] ?> </a></li>
 										<?php } ?>
 									</ul>
 								</li>
