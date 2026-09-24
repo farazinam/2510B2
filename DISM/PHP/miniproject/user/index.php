@@ -92,7 +92,7 @@ $q = mysqli_query($conn, $sel);
 						</div>
 						<h3> <?php echo $fetch['product_name'] ?></h3>
 						<p class="product-price"> <?php echo $fetch['product_price'] ?> </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<a href="cart.php?id=<?php echo $fetch['product_id'] ?>" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
 				<?php } ?>

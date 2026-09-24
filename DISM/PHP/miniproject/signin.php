@@ -125,6 +125,7 @@ if(ISSET($_REQUEST["signInBtn"])){
             // $_SESSION['emailSession'] = $fetch["email"];
             $_SESSION['nameSession'] = $fetch["username"];
             $_SESSION['roleSession'] = $fetch["role_id"];
+            $_SESSION['userSession'] = $fetch["user_id"];
 
             if($_SESSION['roleSession'] == 1){
                 echo '<script>
