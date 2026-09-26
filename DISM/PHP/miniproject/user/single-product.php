@@ -45,6 +45,7 @@ $fetch = mysqli_fetch_array($q);
 								<input type="number" placeholder="0">
 							</form>
 							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+							<a href="placeorder.php?id=<?php echo $fetch["product_id"] ?>" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Buy Now</a>
 							<p><strong>Categories: </strong> <?php echo $fetch["category_name"] ?> </p>
 						</div>
 						<h4>Share:</h4>

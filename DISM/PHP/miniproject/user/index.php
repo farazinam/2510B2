@@ -88,7 +88,7 @@ $q = mysqli_query($conn, $sel);
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="../admin/images/<?php echo $fetch['product_image'] ?>" alt=""></a>
+							<a href="single-product.php?id=<?php echo $fetch["product_id"] ?>"><img src="../admin/images/<?php echo $fetch['product_image'] ?>" alt=""></a>
 						</div>
 						<h3> <?php echo $fetch['product_name'] ?></h3>
 						<p class="product-price"> <?php echo $fetch['product_price'] ?> </p>
