@@ -7,3 +7,5 @@ Route::get('/', [StudentController::class, 'wel']);
 Route::get('/contact', [StudentController::class, 'contact']);
 Route::get('/create', [StudentController::class, 'create']);
 Route::post('/created', [StudentController::class, 'created']);
+
+Route::get('/read', [StudentController::class, 'read']);

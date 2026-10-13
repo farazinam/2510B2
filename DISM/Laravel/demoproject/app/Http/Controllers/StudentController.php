@@ -26,4 +26,10 @@ class StudentController extends Controller
         $create->save();
         return view('create');
     }
+
+    public function read(){
+        $fetch = Student::all();
+        $details = compact('fetch');
+        return view('read')->with($details);
+    }
 }
