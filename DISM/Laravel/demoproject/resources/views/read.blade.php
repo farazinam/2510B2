@@ -23,8 +23,8 @@
             <td>{{$f->age}}</td>
             <td>{{$f->city}}</td>
             <td>
-                <a href="">Edit</a>
-                <a href="">Delete</a>
+                <a href="{{route('edit', ['identity'=>$f->id])}}">Edit</a>
+                <a href="{{route('del', ['identity'=>$f->id])}}">Delete</a>
             </td>
         </tr>
 @endforeach
