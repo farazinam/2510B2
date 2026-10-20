@@ -15,3 +15,10 @@ Route::get('/delete/{identity}', [StudentController::class, 'delete'])->name('de
 
 Route::get('/edit/{identity}', [StudentController::class, 'edit'])->name('edit');
 Route::post('/update/{id}', [StudentController::class, 'update'])->name('update');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

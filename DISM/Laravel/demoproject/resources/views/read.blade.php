@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>All Students</h1>
-    <table border="1">
+@extends('layouts.app')
+
+@section('content')
+
+    <h1 style="border: 1px solid green" class="m-5 mt-2 p-2">All Students</h1>
+    <table class="table w-75 mx-auto">
         <tr>
             <th> Student ID</th>
             <th> Student Name</th>
@@ -23,12 +18,12 @@
             <td>{{$f->age}}</td>
             <td>{{$f->city}}</td>
             <td>
-                <a href="{{route('edit', ['identity'=>$f->id])}}">Edit</a>
-                <a href="{{route('del', ['identity'=>$f->id])}}">Delete</a>
+                <a href="{{route('edit', ['identity'=>$f->id])}}" class="p-2 text-decoration-none text-warning">Edit</a>
+                <a href="{{route('del', ['identity'=>$f->id])}}" class="p-2 text-decoration-none text-danger">Delete</a>
             </td>
         </tr>
 @endforeach
 
     </table>
-</body>
-</html>
+
+@endsection
