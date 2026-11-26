@@ -58,7 +58,7 @@ TRUNCATE TABLE students;
 SELECT * FROM student;
 SELECT * FROM students;
 
--- Drop Table
+-- Drop Table and Database
 DROP TABLE student;
 DROP DATABASE aptech;
 
@@ -170,3 +170,29 @@ SELECT DISTINCT City FROM Employees;
 SELECT DISTINCT Department FROM Employees;
 SELECT DISTINCT JobTitle FROM Employees;
 
+SELECT @@VERSION;
+
+
+-- ----------------------- DAY 4 ----------------------------
+
+-- IN Opr
+SELECT * FROM Employees;
+SELECT * FROM Employees WHERE salary = 49000 OR salary = 57000 OR salary = 72000 OR salary = 88000 OR salary = 122000;
+SELECT * FROM Employees WHERE salary IN (49000, 57000, 72000, 88000, 122000);
+SELECT * FROM Employees WHERE salary NOT IN (49000, 57000, 72000, 88000, 122000);
+
+-- BETWEEN 
+SELECT * FROM Employees WHERE salary >= 90000 AND salary <= 110000;
+SELECT * FROM Employees WHERE salary BETWEEN 90000 AND 110000;
+SELECT * FROM Employees WHERE salary NOT BETWEEN 90000 AND 110000;
+SELECT * FROM Employees WHERE salary < 90000 AND salary >= 45000 OR salary > 110000 AND salary <= 140000;
+
+-- LIKE
+SELECT * FROM Employees WHERE FirstName LIKE 'A%';
+SELECT * FROM Employees WHERE FirstName LIKE '%A%';
+SELECT * FROM Employees WHERE FirstName LIKE '_A%';
+SELECT * FROM Employees WHERE FirstName LIKE '%A_';
+SELECT * FROM Employees WHERE FirstName LIKE '_A_';
+SELECT * FROM Employees WHERE FirstName LIKE 'A__';
+SELECT * FROM Employees WHERE FirstName LIKE 'A___';
+SELECT * FROM Employees WHERE FirstName LIKE 'A_N%';
