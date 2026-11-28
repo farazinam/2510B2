@@ -196,3 +196,59 @@ SELECT * FROM Employees WHERE FirstName LIKE '_A_';
 SELECT * FROM Employees WHERE FirstName LIKE 'A__';
 SELECT * FROM Employees WHERE FirstName LIKE 'A___';
 SELECT * FROM Employees WHERE FirstName LIKE 'A_N%';
+
+
+
+-- ----------------------- DAY 5 ----------------------------
+
+SELECT * FROM Employees;
+-- Functions
+
+-- Built-In Fns 
+
+--string fns
+SELECT CONCAT(FirstName, ' ' ,LastName) AS FullName FROM Employees;
+SELECT *, CONCAT(FirstName, ' ' ,LastName) AS FullName FROM Employees;
+SELECT EmployeeID, CONCAT(FirstName, ' ' ,LastName) AS FullName, 
+Email, Department, JobTitle, Salary, Bonus, HireDate, City, IsActive FROM Employees;
+
+SELECT UPPER(JobTitle) FROM Employees;
+
+-- Math Fn
+SELECT floor(2.8);
+SELECT SIN(0);
+SELECT COS(0);
+
+-- Date Fn
+SELECT GETDATE();
+SELECT SYSDATETIME();
+SELECT GETUTCDATE();
+SELECT CURRENT_TIMESTAMP;
+
+-- Aggregate Fn
+SELECT MIN(Bonus) FROM Employees;
+SELECT MAX(Bonus) FROM Employees;
+SELECT SUM(Bonus) FROM Employees;
+SELECT SUM(Salary) FROM Employees;
+SELECT AVG(Bonus) FROM Employees;
+SELECT COUNT(Bonus) FROM Employees;
+SELECT COUNT(*) FROM Employees;
+
+-- Query Fail (solution is subquery)
+SELECT EmployeeID, FirstName, LastName, 
+Email, Department, JobTitle, Salary, MIN(Bonus), HireDate, City, IsActive FROM Employees;
+
+
+-- Subquery / Nested Query / Inner Query
+SELECT * FROM Employees WHERE Bonus = (SELECT MAX(Bonus) FROM Employees); 
+SELECT * FROM Employees WHERE Bonus = (SELECT MIN(Bonus) FROM Employees); 
+
+
+-- Variable
+DECLARE @min_bonus INT;
+SET @min_bonus = 1500;
+SELECT * FROM Employees WHERE Bonus = @min_bonus;
+
+DECLARE @name VARCHAR(50);
+SET @name = 'Ali';
+SELECT * FROM Employees WHERE FirstName = @name;
